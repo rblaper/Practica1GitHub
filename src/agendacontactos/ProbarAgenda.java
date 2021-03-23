@@ -50,8 +50,8 @@ public class ProbarAgenda {
 		
 		//veo otra vez la agenda
 		
-		miAgenda.listarAgenda();
-
+		//miAgenda.listarAgenda();
+		miAgenda.mostarListaOrdenada(miAgenda.obtenerListaOrdenada());
 	}
 
 }

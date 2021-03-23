@@ -174,15 +174,13 @@ public class AgendaTelefonica {
 			
 		}
 		
-
-
-		/**
-	     * Metodo para ordenar alfabaticamente (nombre y apellidos)
-	     * a partir de la lista de contactos. Se usa el metodo toArray() de  la 
-	     * clase ArrayList para obtener un array estatico con sus elementos
-	     * En la ordenacion utiliza el metodo de insercien
-	     * @return:   array de objetos Contacto ordenados alfabeticamente
-	     */
+	/**
+     * Metodo para ordenar alfabaticamente (nombre y apellidos)
+     * a partir de la lista de contactos. Se usa el metodo toArray() de  la 
+     * clase ArrayList para obtener un array estatico con sus elementos
+     * En la ordenacion utiliza el metodo de insercien
+     * @return:   array de objetos Contacto ordenados alfabeticamente
+     */
 	    public Contacto[] obtenerListaOrdenada(){
 	        
 	        Contacto[] listaOrdenada= new Contacto[this.agenda.size()];
@@ -212,36 +210,37 @@ public class AgendaTelefonica {
 	        
 	    } //fin de la ordenación
 	        
-	    /** 
-	     * Metodo para determinar si dados dos contactos, el primero es alfabaticamente
-	     *  posterior al segundo
-	     * @param c1: primer objeto Contacto
-	     * @param c2: segundo objeto Contacto
-	     * @return: true si el primer contacto es alfabaticamente mayor al segundo: false en otro caso
-	     */
-	    public static boolean esMayor (Contacto c1, Contacto c2){
-	        
-	        boolean resultado=false;
-	        //se comparan los apellidos
-	        if (c1.getApellidos().compareToIgnoreCase(c2.getApellidos())>0){
-	            resultado = true;
-	            //apellidos iguales
-	        } else if (c1.getApellidos().compareToIgnoreCase(c2.getApellidos())==0){
-	        	//se ordena por nombre
-	            if (c1.getNombre().compareToIgnoreCase(c2.getNombre())>0){
-	                resultado =true;
-	            }
-	        }
-	        //en el resto de casos c1 NO es mayor que c2
-	        return resultado;
-	    }
-	    public void mostarListaOrdenada (Contacto[] c) {
-			for (Contacto datos : c) {
-				System.out.format("\n\t %s \t\t %s \t\t %s", datos.getNombre() ,
-						datos.getApellidos(),
-						datos.getTelefono());
-			}
-		}		
+    /** 
+     * Metodo para determinar si dados dos contactos, el primero es alfabaticamente
+     *  posterior al segundo
+     * @param c1: primer objeto Contacto
+     * @param c2: segundo objeto Contacto
+     * @return: true si el primer contacto es alfabaticamente mayor al segundo: false en otro caso
+     */
+    public static boolean esMayor (Contacto c1, Contacto c2){
+        
+        boolean resultado=false;
+        //se comparan los apellidos
+        if (c1.getApellidos().compareToIgnoreCase(c2.getApellidos())>0){
+            resultado = true;
+            //apellidos iguales
+        } else if (c1.getApellidos().compareToIgnoreCase(c2.getApellidos())==0){
+        	//se ordena por nombre
+            if (c1.getNombre().compareToIgnoreCase(c2.getNombre())>0){
+                resultado =true;
+            }
+        }
+        //en el resto de casos c1 NO es mayor que c2
+        return resultado;
+    }
+    public void mostarListaOrdenada (Contacto[] c) {
+   	 System.out.println("\tNOMBRE 		 APELLIDOS 		 TELEFONO");
+		for (Contacto datos : c) {
+			System.out.format("\n\t %s \t\t %s \t\t %s", datos.getNombre() ,
+					datos.getApellidos(),
+					datos.getTelefono());
+		}
+	}		
 	
 
 
