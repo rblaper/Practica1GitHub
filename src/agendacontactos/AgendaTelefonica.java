@@ -11,10 +11,8 @@ public class AgendaTelefonica {
 		this.agenda = new ArrayList<Contacto>();
 	}
 	
-
-	
 	/**
-	 * M�todo para agregar un nuevo contacto al final de la lista -agenda
+	 * Método para agregar un nuevo contacto al final de la lista -agenda
 	 * Si ya existe otro contacto con el mismo nombre y apellidos, no lo agrega
 	 * @param c: objeto de la clase Contacto con el contacto a agregar
 	 * @return: true si se agerega correctamente, false en otro caso
@@ -181,7 +179,8 @@ public class AgendaTelefonica {
      * En la ordenacion utiliza el metodo de insercien
      * @return:   array de objetos Contacto ordenados alfabeticamente
      */
-	    public Contacto[] obtenerListaOrdenada(){
+		//Contacto[]
+	    public void obtenerListaOrdenada(){
 	        
 	        Contacto[] listaOrdenada= new Contacto[this.agenda.size()];
 	       this.agenda.toArray(listaOrdenada);
@@ -206,7 +205,13 @@ public class AgendaTelefonica {
 	            listaOrdenada[j+1] = auxiliar;
 	        } //fin del bucle para
 	        
-	        return listaOrdenada;
+	        
+	        
+            this.agenda.clear();
+            for (Contacto c : listaOrdenada) {
+           	 this.agenda.add(c);
+            }
+	        //return this.agenda;
 	        
 	    } //fin de la ordenación
 	        

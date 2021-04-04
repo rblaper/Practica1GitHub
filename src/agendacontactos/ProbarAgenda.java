@@ -51,7 +51,9 @@ public class ProbarAgenda {
 		//veo otra vez la agenda
 		
 		//miAgenda.listarAgenda();
-		miAgenda.mostarListaOrdenada(miAgenda.obtenerListaOrdenada());
+		//miAgenda.mostarListaOrdenada(miAgenda.obtenerListaOrdenada());
+		miAgenda.obtenerListaOrdenada();
+		miAgenda.listarAgenda();
 	}
 
 }
